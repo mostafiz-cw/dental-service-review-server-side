@@ -92,17 +92,10 @@ async function run() {
       const result = await addReview.insertOne(review);
       res.send(result);
     });
-
-    
   } catch {}
 }
 
 run().catch((err) => console.log(err));
-
-
-// app.get("/", (req, res) => {
-//   res.send("the server is runing on 5000 port");
-// });
 
 const services = [
   {
