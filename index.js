@@ -97,20 +97,20 @@ async function run() {
 
 run().catch((err) => console.log(err));
 
-const services = [
-  {
-    id: 4,
-    img_url:
-      "https://www.soothing.dental/wp-content/uploads/2022/06/dentalExam-1024x719-1.png",
-    service_title: "Dental Exam",
-    description:
-      "You need a regular dental exam to find little problems before they become big. More importantly, your dental exam must be thorough and conducted by an experienced",
-    price: 400,
-  },
-];
+// const services = [
+//   {
+//     id: 4,
+//     img_url:
+//       "https://www.soothing.dental/wp-content/uploads/2022/06/dentalExam-1024x719-1.png",
+//     service_title: "Dental Exam",
+//     description:
+//       "You need a regular dental exam to find little problems before they become big. More importantly, your dental exam must be thorough and conducted by an experienced",
+//     price: 400,
+//   },
+// ];
 
 app.get("/", (req, res) => {
-  res.send(services);
+  res.send("Server is running correctly");
 });
 
 app.listen(port, () => {
