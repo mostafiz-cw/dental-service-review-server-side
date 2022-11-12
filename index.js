@@ -27,6 +27,7 @@ async function run() {
     const user = { name: "test", email: "testrafi@gmail.com" };
     // const result = await addService.insertOne(user);
 
+    // get home page service
     app.get("/services", async (req, res) => {
       const query = {};
       const cursor = addService.find(query);
@@ -34,13 +35,15 @@ async function run() {
       res.send(services);
     });
 
-    app.get("/allservice", async (req, res) => {
+    // get all service to service route
+    app.get("/service", async (req, res) => {
       const query = {};
       const cursor = addService.find(query);
       const allservices = await cursor.toArray();
       res.send(allservices);
     });
 
+    // get specific service and specific serice review list
     app.get("/services/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
@@ -61,7 +64,7 @@ async function run() {
       res.send(result);
     });
 
-    // my review
+    // my review get
     app.get("/myreview", async (req, res) => {
       console.log(req.query);
       let query = {};
@@ -83,6 +86,7 @@ async function run() {
       res.send(result);
     });
 
+    // my review add
     app.post("/reviews", async (req, res) => {
       const review = req.body;
       const result = await addReview.insertOne(review);
